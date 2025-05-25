@@ -32,3 +32,21 @@ button.addEventListener("click", () => {
   sasnavka1.style.display = "none";
   site1.style.display = "block";
 });
+
+const music = document.getElementById('bgMusic');
+const play = document.getElementById('toggleSound');
+let isPlaying = false;
+
+play.addEventListener('click', () => {
+  if (!isPlaying) {
+    music.play();
+    play.textContent = '🔇 Выключить звук';
+    play.setAttribute('data-text', '🔇 Выключить звук');
+    isPlaying = true;
+  } else {
+    music.pause();
+    play.textContent = '🔈 Включить звук';
+    play.setAttribute('data-text', '🔈 Включить звук');
+    isPlaying = false;
+  }
+});
