@@ -50,3 +50,13 @@ play.addEventListener('click', () => {
     isPlaying = false;
   }
 });
+window.addEventListener('load', () => {
+  const music = document.getElementById('bgMusic');
+  const playPromise = music.play();
+
+  if (playPromise !== undefined) {
+    playPromise.catch(error => {
+      console.warn('Автовоспроизведение отклонено браузером:', error);
+    });
+  }
+});
