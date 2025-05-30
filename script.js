@@ -21,7 +21,7 @@ function prevSlide() {
 }
 
 // 🔄 Автосмена слайдол каждые 5 секунд
-setInterval(nextSlide, 5000);
+setInterval(nextSlide, 6000);
 
 // 🔘 Кнопка переключения видимости блоков
 const button = document.getElementById('button');
@@ -50,13 +50,25 @@ play.addEventListener('click', () => {
     isPlaying = false;
   }
 });
-window.addEventListener('load', () => {
-  const music = document.getElementById('bgMusic');
-  const playPromise = music.play();
 
-  if (playPromise !== undefined) {
-    playPromise.catch(error => {
-      console.warn('Автовоспроизведение отклонено браузером:', error);
-    });
+ 
+  let isStarted = false;
+
+  // Первый раз при движении мыши — запускаем музыку
+  function startMusicOnce() {
+    if (!isStarted) {
+      const playPromise = music.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          console.log('Музыка запущена после движения мыши');
+          isStarted = true;
+          // Удаляем обработчик, чтобы не запускалось повторно
+          window.removeEventListener('mousemove', startMusicOnce);
+        }).catch(error => {
+         
+        });
+      }
+    }
   }
-});
+
+  window.addEventListener('mousemove', startMusicOnce, { once: true });

@@ -168,7 +168,7 @@ background: linear-gradient(358deg,rgba(186, 42, 26, 1) 0%, rgba(82, 15, 15, 1) 
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 999;
+  z-index: 10000;
   overflow: hidden;
   
  
