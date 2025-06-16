@@ -642,3 +642,100 @@ background: linear-gradient(157deg,rgba(44, 5, 51, 1) 0%, rgba(175, 88, 232, 1) 
 -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  nav a {
+    font-size: 20px;
+    margin: 5px;
+  }
+
+  .text-image-section {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .text-block,
+  .section-image {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .h11 {
+    font-size: 36px;
+  }
+
+  .yy2,
+  .yy3 {
+    font-size: 28px;
+    top: auto;
+    bottom: 20px;
+  }
+
+  .sound-toggle-btn {
+    font-size: 14px;
+    padding: 15px 20px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .button-49,
+  .button-49:after {
+    width: 140px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+  }
+
+  .slider .slides img {
+    width: 100%;
+    height: auto;
+  }
+
+  .controls {
+    top: 40%;
+    transform: translateY(-40%);
+  }
+
+  .prevSlide, .nextSlide {
+    transform: scale(1.5);
+    left: auto;
+    right: auto;
+    margin: 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .footer-content img {
+    width: 120px;
+  }
+
+  .footer-content span {
+    font-size: 18px;
+  }
+
+  .center-text {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 24px;
+    text-align: center;
+  }
+}
